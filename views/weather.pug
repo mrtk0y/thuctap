@@ -1,0 +1,14 @@
+extends layout.pug
+block content
+  .card
+    .card-body
+      h5.card-title Chào bạn #{name}
+      .card-text
+        p
+        | Thành phố #{city}
+        ul
+          li Nhiệt độ thành phố là #{temp} C 
+          li Độ ẩm là  #{humidity}%
+          li Tốc độ gió là #{windSpeed} m/s
+    a.btn.btn-primary(href='/') Tìm Thành phố khác
+  

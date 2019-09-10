@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .main.container.row
+    .col-md-6.col-md-offset-3
+      h1.display-4.m-b-2.text-white 
+        | Đăng kí
+      
+      // register form
+      form(method='POST' action='/register')
+        div.form-group
+          label(for='name') Tên:
+          input#name.form-control(type='text', placeholder='Họ và tên' name='name')
+        div.form-group
+          label(for='email') Email:
+          input#email.form-control(type='email', placeholder='abc123@email.com' name='email')
+        div.form-group
+          label(for='pw') Password:
+          input#pw.form-control(type='password' placeholder='Mật khẩu' name='password')
+        div.form-group
+          label(for='pw2') Xác nhận Password:
+          input#pw2.form-control(type='password' placeholder='Xác nhận mật khẩu' name='confirmPassword')
+        button.btn.btn-primary(type='submit') Đăng kí

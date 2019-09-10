@@ -1,0 +1,14 @@
+extends layout.pug
+block content  
+  section#content
+    .d-flex.justify-content-center.my-3
+      img.w-25(src="https://imageog.flaticon.com/icons/png/512/49/49116.png" alt="magnifying")
+
+    form.form-group.text-center(action="/weather" method="post")
+      label.my-3(for="formInputWeather")
+        | Thời tiết Đất nước bạn muốn tìm là?
+
+      input#formInputWeather.form-control.w-50.text-center.my-3.mx-auto(type="text" name="city" placeholder="Tên thành phố" )
+
+      button.btn.btn-primary.my-3(type="submit")
+        | Tìm kiếm
