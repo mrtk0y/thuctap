@@ -1,27 +1,29 @@
-const express = require('express');         // da cai
-const mongoose = require('mongoose');       // da cai
-const session = require('express-session'); // da cai 
+const express = require('express'); // da cai
+const mongoose = require('mongoose'); // da cai
+const session = require('express-session'); // da cai
 const MongoStore = require('connect-mongo')(session);
 const app = express();
 
 // Mongo connection
 mongoose.connect('mongodb://localhost:27017/weather1');
 let db = mongoose.connection;
-db.on('error',console.error.bind(console, 'connection error'));
+db.on('error', console.error.bind(console, 'connection error'));
 
 // Dùng Sessions để theo dõi logins
-app.use(session({
-  secret:'Its me',
-  resave: true,
-  saveUninitialized: false,
-  store: new MongoStore({
-    mongooseConnection: db
+app.use(
+  session({
+    secret: 'Its me',
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+      mongooseConnection: db
+    })
   })
-}));
+);
 
 //  Làm user ID thành 1 templates
-app.use( function (request,response, next){
-  response.locals.currentUser= request.session.userID;
+app.use(function(request, response, next) {
+  response.locals.currentUser = request.session.userId;
   next();
 });
 
