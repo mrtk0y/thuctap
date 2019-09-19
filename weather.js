@@ -1,5 +1,5 @@
-const https = require('https');
-const http = require('http');
+const https = require("https");
+const http = require("http");
 
 function getCelsius(kelvin) {
   const celsius = kelvin - 273;
@@ -13,12 +13,12 @@ function getTemp(city) {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=27e8a192a08c2cb50fc6139144dcd6fe`,
         response => {
           if (response.statusCode === 200) {
-            let body = '';
+            let body = "";
 
-            response.on('data', data1 => {
+            response.on("data", data1 => {
               body += data1.toString();
             });
-            response.on('end', () => {
+            response.on("end", () => {
               const weather = JSON.parse(body);
               const values = {
                 temp: getCelsius(weather.main.temp),
@@ -49,9 +49,10 @@ function getTemp(city) {
           }
         }
       )
-      .on('error', function(error) {
+      .on("error", function(error) {
         reject(error);
       });
   });
 }
+// test
 module.exports.getTemp = getTemp;
