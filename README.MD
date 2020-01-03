@@ -1,3 +1,6 @@
-Thuc-Tap
-Project setup
-Mongod
+# Thuc-Tap
+
+## Project setup
+```
+mongod
+```
