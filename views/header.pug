@@ -6,9 +6,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     button(class="navbar-toggler" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation")
       span(class="navbar-toggler-icon")
     div(class="collapse navbar-collapse" id="navbarText")
-      ul(class="navbar-nav mr-auto")
-        li.nav-item
-          a.nav-link(href="register") Đăng kí
+      ul(class="navbar-nav mr-auto")          
         li.nav-item
           a.nav-link(href="about") Chúng tôi
         li.nav-item
@@ -17,30 +15,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           a.nav-link(href="profile") Trang cá nhân
       if currentUser
         div
-          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
-          a.btn.btn-light.pull-md-right(href='/logout') Thoát
+          //- img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          a.btn.btn-.pull-md-right(href='/logout') Thoát
       else  
+        a.btn(href="register") Đăng kí
         a.btn.btn-info.pull-md-right(href='login') Đăng nhập
-
-
-  //- .container.mx-auto
-    a.navbar-brand.text-uppercase.text-justify(href="/")
-      i.icn-logo.material-icons
-      | HOME
-
-    .d-flex.flex-wrap
-      if !currentUser
-        a.nav-item.nav-link(href='register') Đăng kí
-      a.nav-item.nav-link(href='about') Chúng tôi
-      a.nav-item.nav-link(href='contact') Liện hệ
-      a.nav-item.nav-link(href='profile') Trang cá nhân
-    
-    .mx-auto
-      if currentUser
-        div
-          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
-          a.btn.btn-light.pull-md-right(href='/logout') Thoát
-      else  
-        a.btn.btn-info.pull-md-right(href='login') Đăng nhập
-    
-
