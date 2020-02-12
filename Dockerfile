@@ -6,7 +6,7 @@ RUN apk add --update npm
 RUN apk add vim \
   nano
 
-WORKDIR /ThucTap
-COPY . /ThucTap
+WORKDIR /internship-project
+COPY . /internship-project
 
 
