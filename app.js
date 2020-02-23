@@ -5,7 +5,10 @@ const MongoStore = require('connect-mongo')(session);
 const app = express();
 
 // Mongo connection
-mongoose.connect('mongodb://localhost:27017/weather1');
+// TODO: Explaination HERE about name replacement (localhost -> mongo)
+// more info: https://itnext.io/dockerize-a-node-js-app-connected-to-mongodb-64fdeca94797
+mongoose.connect('mongodb://mongo:27017/weather1');
+
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 
